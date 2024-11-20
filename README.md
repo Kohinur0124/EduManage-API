@@ -17,5 +17,5 @@ EduManage API is a comprehensive RESTful Web API designed to efficiently manage 
 2. **Change Connection String**:
       src/EduManage.API/appsettings.json
    
-3. ** Add migration and update migration :
+3. **Add migration and update migration**:
         
