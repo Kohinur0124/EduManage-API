@@ -14,3 +14,5 @@ EduManage API is a comprehensive RESTful Web API designed to efficiently manage 
    ```bash
    git clone https://github.com/Kohinur0124/EduManage-API.git
    cd EduManage-API
+1. **Change Connection String**:
+      
