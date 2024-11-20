@@ -10,19 +10,19 @@ EduManage API is a comprehensive RESTful Web API designed to efficiently manage 
 
 ## Installation
 
-1. **Clone the repository**:
+1. **Clone the repository**:<br>
    ```bash
    git clone https://github.com/Kohinur0124/EduManage-API.git
    cd EduManage-API
 2. **Change Connection String**:<br>
       src/EduManage.API/appsettings.json
    
-3. **Add migration and update migration**:
-     консоль диспетчера пакетов :
+3. **Add migration and update migration**:<br>
+     консоль диспетчера пакетов :<br>
    ```bash
    add-migration migrationName
    update-database
-4. **Run the application:
+4. **Run the application:<br>
    ```bash
    dotnet run        
 
