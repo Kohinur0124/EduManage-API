@@ -1,13 +1,14 @@
-﻿using EduManage.Application.UseCases.City.Commands;
-using EduManage.Application.UseCases.City.Queries;
+﻿using EduManage.Application.UseCases.City.Queries;
 using EduManage.Application.UseCases.Subject.Commands;
 using EduManage.Application.UseCases.Subject.Queries;
+using EduManage.Application.UseCases.TeachersSubjects.Commands;
+using EduManage.Application.UseCases.TeachersSubjects.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EduManage.API.Controllers;
 
-[Route("api/[controller]")]
+[Route("[controller]/[action]")]
 [ApiController]
 public class SubjectController : ControllerBase
 {
@@ -40,9 +41,37 @@ public class SubjectController : ControllerBase
 	}
 
 	[HttpDelete]
-	public async ValueTask<IActionResult> DeleteCity(DeleteSubjectCommand deleteSubject)
+	public async ValueTask<IActionResult> DeleteSubject(DeleteSubjectCommand deleteSubject)
 	{
 		var result = await _mediator.Send(deleteSubject);
+		return Ok(result);
+	}
+
+	[HttpGet]
+	public async ValueTask<IActionResult> GetAllTeachersSubjects()
+	{
+		var subjects = await _mediator.Send(new GetTeachersSubjectsCommand());
+		return Ok(subjects);
+	}
+
+	[HttpPost]
+	public async ValueTask<bool> AddTeachersSubjects(PostTeachersSubjectsCommand postTeachersSubjects)
+	{
+		var result = await _mediator.Send(postTeachersSubjects);
+		return result;
+	}
+
+	[HttpPut]
+	public async ValueTask<IActionResult> UpdateTeachersSubjects(PutTeachersSubjectsCommand putTeachersSubjects)
+	{
+		var result = await _mediator.Send(putTeachersSubjects);
+		return Ok(result);
+	}
+
+	[HttpDelete]
+	public async ValueTask<IActionResult> DeleteTeachersSubjects(DeleteTeachersSubjectsCommand deleteTeachersSubjects)
+	{
+		var result = await _mediator.Send(deleteTeachersSubjects);
 		return Ok(result);
 	}
 

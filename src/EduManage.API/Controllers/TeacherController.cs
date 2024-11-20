@@ -1,5 +1,6 @@
 ﻿using EduManage.Application.UseCases.City.Commands;
 using EduManage.Application.UseCases.City.Queries;
+using EduManage.Application.UseCases.Student.Queries;
 using EduManage.Application.UseCases.Subject.Commands;
 using EduManage.Application.UseCases.Subject.Queries;
 using EduManage.Application.UseCases.Teacher.Commands;
@@ -9,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EduManage.API.Controllers;
 
-[Route("api/[controller]")]
+[Route("[controller]")]
 [ApiController]
 public class TeacherController : ControllerBase
 {
@@ -48,5 +49,11 @@ public class TeacherController : ControllerBase
 		return Ok(result);
 	}
 
+	[HttpGet("FilterTeacher")]
+	public async ValueTask<IActionResult> FilterTeacher(FilterTeacherCommand filterTeacher)
+	{
+		var teachers = await _mediator.Send(filterTeacher);
+		return Ok(teachers);
+	}
 
 }

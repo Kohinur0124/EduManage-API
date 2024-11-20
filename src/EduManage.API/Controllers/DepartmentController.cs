@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EduManage.API.Controllers;
 
-[Route("api/[controller]")]
+[Route("[controller]/[action]")]
 [ApiController]
 public class DepartmentController : ControllerBase
 {
@@ -29,8 +29,8 @@ public class DepartmentController : ControllerBase
 		var result = await _mediator.Send(postDepartment);
 		return result;
 	}
-	[HttpPut]
 
+	[HttpPut]
 	public async ValueTask<IActionResult> UpdateDepartment(PutDepartmentCommand putDepartment)
 	{
 		var result = await _mediator.Send(putDepartment);
@@ -38,7 +38,6 @@ public class DepartmentController : ControllerBase
 	}
 
 	[HttpDelete]
-
 	public async ValueTask<IActionResult> DeleteDepartment(DeleteDepartmentCommand deleteDepartment)
 	{
 		var result = await _mediator.Send(deleteDepartment);

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduManage.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241119132801_init1")]
-    partial class init1
+    [Migration("20241120054104_seeddata")]
+    partial class seeddata
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,6 +49,36 @@ namespace EduManage.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Cities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            Name = "Toshkent shahri"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            Name = "Toshkent viloyati"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            Name = "Buxoro voloyati"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            Name = "Fargona viloyati"
+                        });
                 });
 
             modelBuilder.Entity("EduManage.Domain.Entities.Department", b =>
@@ -75,6 +105,15 @@ namespace EduManage.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Departments");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            Name = "Komputer injinering fakulteti"
+                        });
                 });
 
             modelBuilder.Entity("EduManage.Domain.Entities.Student", b =>
@@ -120,6 +159,128 @@ namespace EduManage.Infrastructure.Migrations
                     b.HasIndex("DepartmentId");
 
                     b.ToTable("Students");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BirthDate = new DateTime(2024, 11, 20, 10, 41, 3, 748, DateTimeKind.Local).AddTicks(3154),
+                            CityId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrentGradeLavel = 7,
+                            DepartmentId = 1,
+                            Gender = 1,
+                            IsDeleted = false,
+                            Name = "Sevinch Xayriddinobva"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BirthDate = new DateTime(2024, 11, 20, 10, 41, 3, 748, DateTimeKind.Local).AddTicks(3169),
+                            CityId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrentGradeLavel = 7,
+                            DepartmentId = 1,
+                            Gender = 1,
+                            IsDeleted = false,
+                            Name = "Sabira Qurbonbekova"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BirthDate = new DateTime(2024, 11, 20, 10, 41, 3, 748, DateTimeKind.Local).AddTicks(3172),
+                            CityId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrentGradeLavel = 7,
+                            DepartmentId = 1,
+                            Gender = 0,
+                            IsDeleted = false,
+                            Name = "Sanjar Toirjonov"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BirthDate = new DateTime(2024, 11, 20, 10, 41, 3, 748, DateTimeKind.Local).AddTicks(3174),
+                            CityId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrentGradeLavel = 7,
+                            DepartmentId = 1,
+                            Gender = 0,
+                            IsDeleted = false,
+                            Name = "Fayzullo Togonboyev"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            BirthDate = new DateTime(2024, 11, 20, 10, 41, 3, 748, DateTimeKind.Local).AddTicks(3175),
+                            CityId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrentGradeLavel = 7,
+                            DepartmentId = 1,
+                            Gender = 0,
+                            IsDeleted = false,
+                            Name = "Quvonchbek Toychiyev"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            BirthDate = new DateTime(2024, 11, 20, 10, 41, 3, 748, DateTimeKind.Local).AddTicks(3178),
+                            CityId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrentGradeLavel = 7,
+                            DepartmentId = 1,
+                            Gender = 0,
+                            IsDeleted = false,
+                            Name = "Azizbek Shodmonov"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            BirthDate = new DateTime(2024, 11, 20, 10, 41, 3, 748, DateTimeKind.Local).AddTicks(3179),
+                            CityId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrentGradeLavel = 7,
+                            DepartmentId = 1,
+                            Gender = 0,
+                            IsDeleted = false,
+                            Name = "Alisher Amrullayev"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            BirthDate = new DateTime(2024, 11, 20, 10, 41, 3, 748, DateTimeKind.Local).AddTicks(3181),
+                            CityId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrentGradeLavel = 7,
+                            DepartmentId = 1,
+                            Gender = 0,
+                            IsDeleted = false,
+                            Name = "Jasurbek Abdullayev"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            BirthDate = new DateTime(2024, 11, 20, 10, 41, 3, 748, DateTimeKind.Local).AddTicks(3183),
+                            CityId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrentGradeLavel = 7,
+                            DepartmentId = 1,
+                            Gender = 1,
+                            IsDeleted = false,
+                            Name = "Jumagul Muhammadjonova"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            BirthDate = new DateTime(2024, 11, 20, 10, 41, 3, 748, DateTimeKind.Local).AddTicks(3185),
+                            CityId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrentGradeLavel = 7,
+                            DepartmentId = 1,
+                            Gender = 1,
+                            IsDeleted = false,
+                            Name = "Shahnoza Sherqoziyeva"
+                        });
                 });
 
             modelBuilder.Entity("EduManage.Domain.Entities.Students_Subjects", b =>
@@ -184,6 +345,48 @@ namespace EduManage.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Subjects");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            GradeLavel = 7,
+                            IsDeleted = false,
+                            Name = "Web dasturlash"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            GradeLavel = 7,
+                            IsDeleted = false,
+                            Name = "Multimedia Dasturlash"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            GradeLavel = 7,
+                            IsDeleted = false,
+                            Name = "Kompyuter ko'rish"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            GradeLavel = 7,
+                            IsDeleted = false,
+                            Name = "SMM"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            GradeLavel = 7,
+                            IsDeleted = false,
+                            Name = "3D texnalogiya"
+                        });
                 });
 
             modelBuilder.Entity("EduManage.Domain.Entities.Teacher", b =>
@@ -221,6 +424,48 @@ namespace EduManage.Infrastructure.Migrations
                     b.HasIndex("CityId");
 
                     b.ToTable("Teachers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BirthDate = new DateTime(2024, 11, 20, 10, 41, 3, 748, DateTimeKind.Local).AddTicks(3229),
+                            CityId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Gender = 0,
+                            IsDeleted = false,
+                            Name = "Sadikov Rustamjon"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BirthDate = new DateTime(2024, 11, 20, 10, 41, 3, 748, DateTimeKind.Local).AddTicks(3235),
+                            CityId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Gender = 0,
+                            IsDeleted = false,
+                            Name = "Nematov Abdugani"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BirthDate = new DateTime(2024, 11, 20, 10, 41, 3, 748, DateTimeKind.Local).AddTicks(3237),
+                            CityId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Gender = 1,
+                            IsDeleted = false,
+                            Name = "Artikova Muazzam"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BirthDate = new DateTime(2024, 11, 20, 10, 41, 3, 748, DateTimeKind.Local).AddTicks(3239),
+                            CityId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Gender = 1,
+                            IsDeleted = false,
+                            Name = "Abidova Shahnoza"
+                        });
                 });
 
             modelBuilder.Entity("EduManage.Domain.Entities.Teachers_Subjects", b =>

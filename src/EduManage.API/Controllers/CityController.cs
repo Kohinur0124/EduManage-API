@@ -1,11 +1,12 @@
 ﻿using EduManage.Application.UseCases.City.Commands;
 using EduManage.Application.UseCases.City.Queries;
+using EduManage.Application.UseCases.Students_Subjects.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EduManage.API.Controllers;
 
-[Route("api/[controller]")]
+[Route("[controller]/[action]")]
 [ApiController]
 public class CityController : ControllerBase
 {
@@ -38,7 +39,7 @@ public class CityController : ControllerBase
 	}
 
 	[HttpDelete]
-	public async ValueTask<IActionResult> DeleteCity(DeleteCityCommand deleteCity)
+	public async ValueTask<IActionResult> DeleteCity(DeleteStudentSubjectsCommand deleteCity)
 	{
 		var result = await _mediator.Send(deleteCity);
 		return Ok(result);
@@ -46,3 +47,4 @@ public class CityController : ControllerBase
 
 
 }
+

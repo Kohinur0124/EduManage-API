@@ -22,7 +22,7 @@ namespace EduManage.Application.UseCases.City.Handlers
 			{
 
 				var res = await _context.Cities.
-					FirstOrDefaultAsync(x => x.Id == request.Id);
+					FirstOrDefaultAsync(x => x.Id == request.Id && x.IsDeleted==false);
 
 				res.Name = request.Name;
 				res.LastUpdatedDate = DateTime.Now;
